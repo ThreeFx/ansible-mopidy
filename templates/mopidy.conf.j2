@@ -17,6 +17,9 @@ playlists_dir = /var/lib/mopidy/playlists
 mixer = {{ 'alsamixer' if mopidy_alsamixer_enabled else 'software' }}
 output = {{ 'alsasink' if mopidy_alsamixer_enabled else 'autoaudiosink' }}
 
+[http]
+allowed_origins = {{ mopidy_http_allowed_origins }}
+
 [alsamixer]
 enabled = {{ 'true' if mopidy_alsamixer_enabled else 'false' }}
 card = {{ mopidy_alsamixer_card }}

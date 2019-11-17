@@ -5,6 +5,8 @@ mopidy_alsamixer_control: "Master"
 mopidy_alsamixer_min_volume: "0"
 mopidy_alsamixer_max_volume: "100"
 
+mopidy_http_allowed_origins: ""
+
 mopidy_spotify_enabled: false
 mopidy_spotify_username: "changeme"
 mopidy_spotify_password: "changeme"
