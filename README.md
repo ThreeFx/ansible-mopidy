@@ -1,7 +1,7 @@
 mopidy
 =========
 
-Installs and configures mopidy, mopify and (optionally) mopidy-spotify.
+Installs and configures mopidy, iris and (optionally) mopidy-spotify.
 
 Requirements
 ------------
