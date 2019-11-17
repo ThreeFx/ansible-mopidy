@@ -1,5 +1,6 @@
 ---
 - name: restart mopidy
+  become: True
   systemd:
     name: mopidy
     state: restarted
