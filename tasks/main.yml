@@ -25,13 +25,22 @@
     - deb
     - deb-src
 
-- name: Install mopidy
+- name: Install mopidy and extensions
   become: True
   apt:
     name:
       - mopidy
       - mopidy-spotify
+      - mopidy-alsamixer
+      - python-pip
     update_cache: yes
+
+- name: Add mopidy user to group audio
+  become: True
+  user:
+    name: mopidy
+    groups: audio
+    append: yes
 
 - name: Install iris
   become: True

@@ -3,3 +3,5 @@
   hosts: all
   roles:
     - role: mopidy
+      vars:
+        mopidy_alsamixer_enabled: true

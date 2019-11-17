@@ -13,8 +13,19 @@ media_dir = /var/lib/mopidy/media
 [m3u]
 playlists_dir = /var/lib/mopidy/playlists
 
+[audio]
+mixer = {{ 'alsamixer' if mopidy_alsamixer_enabled else 'software' }}
+output = {{ 'alsasink' if mopidy_alsamixer_enabled else 'autoaudiosink' }}
+
+[alsamixer]
+enabled = {{ 'true' if mopidy_alsamixer_enabled else 'false' }}
+card = {{ mopidy_alsamixer_card }}
+control = {{ mopidy_alsamixer_control }}
+min_volume = {{ mopidy_alsamixer_min_volume }}
+max_volume = {{ mopidy_alsamixer_max_volume }}
+
 [spotify]
-enabled = {{ mopidy_spotify_enabled }}
+enabled = {{ 'true' if mopidy_spotify_enabled else 'false' }}
 username = {{ mopidy_spotify_username }}
 password = {{ mopidy_spotify_password }}
 client_id = {{ mopidy_spotify_client_id }}

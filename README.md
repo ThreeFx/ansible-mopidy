@@ -14,7 +14,12 @@ Role Variables
 
 | Variable Name | Default Value | Description |
 --------------- |---------------|--------------
-`mopidy_spotify_enabled` | "false" | Whether to enable Spotify plugin
+`mopidy_alsamixer_enabled` | false | Whether to enable the Alsamixer plugin
+`mopidy_alsamixer_card` | "0" | Alsa sound card to use
+`mopidy_alsamixer_control` | "Master" | Which channel to mix
+`mopidy_alsamixer_min_volume` | "0" | Minimum volume (0% mopidy maps to this value)
+`mopidy_alsamixer_max_volume` | "100" | Maximum volume (100% mopidy maps to this value)
+`mopidy_spotify_enabled` | false | Whether to enable Spotify plugin
 `mopidy_spotify_username` | "changeme" | Username for Spotify
 `mopidy_spotify_password` | "changeme" | Password for Spotify
 `mopidy_spotify_client_id` | "changeme" | Client ID for Spotify
