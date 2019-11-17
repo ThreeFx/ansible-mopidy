@@ -1,0 +1,6 @@
+---
+mopidy_spotify_enabled: "false"
+mopidy_spotify_username: "changeme"
+mopidy_spotify_password: "changeme"
+mopidy_spotify_client_id: "changeme"
+mopidy_spotify_client_secret: "changeme"

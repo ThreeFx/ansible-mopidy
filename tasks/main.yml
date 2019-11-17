@@ -1,0 +1,48 @@
+---
+- name: Install gpg and pip
+  become: true
+  apt:
+    name:
+      - gnupg2
+      - python-pip
+
+- name: Copy mopidy apt key
+  copy:
+    src: mopidy.key
+    dest: /tmp/mopidy.key
+  changed_when: False
+
+- name: Add mopidy apt key
+  become: True
+  apt_key:
+    file: /tmp/mopidy.key
+
+- name: Add mopidy repos
+  become: True
+  apt_repository:
+    repo: "{{ item }} http://apt.mopidy.com/ {{ ansible_distribution_release }} main contrib non-free"
+  with_items:
+    - deb
+    - deb-src
+
+- name: Install mopidy
+  become: True
+  apt:
+    name:
+      - mopidy
+      - mopidy-spotify
+    update_cache: yes
+
+- name: Install mopify
+  become: True
+  pip:
+    name: Mopidy-Mopify
+
+- name: Configure mopidy
+  become: True
+  template:
+    src: mopidy.conf.j2
+    dest: /etc/mopidy/mopidy.conf
+    owner: mopidy
+    mode: 0600
+  notify: restart mopidy

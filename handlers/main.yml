@@ -1,0 +1,6 @@
+---
+- name: restart mopidy
+  systemd:
+    name: mopidy
+    state: restarted
+    enabled: yes
