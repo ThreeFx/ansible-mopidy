@@ -32,7 +32,6 @@
       - mopidy
       - mopidy-spotify
       - mopidy-alsamixer
-      - python-pip
     update_cache: yes
 
 - name: Add mopidy user to group audio
